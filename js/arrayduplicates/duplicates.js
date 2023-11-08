@@ -1,13 +1,13 @@
-/* function duplicate1(arr){
+function duplicate1(arr){
 
 let s = new Set(arr);
 let newArr = [...s]
 console.log(newArr)
  return newArr.length != arr.length?true:false
 }
-console.log(duplicate1([1,2,4,5])) */
+console.log(duplicate1([1,2,4,5])) 
 
-/* function duplicate1(arr){
+ function duplicate1(arr){
     arr.sort((a,b) => a-b);
     for(let i =0; i< arr.length;i++){
         if(arr[i] === arr[i+1])
@@ -15,9 +15,9 @@ console.log(duplicate1([1,2,4,5])) */
     }
     return false
 }
-console.log(duplicate1([1,2,4,2,5]))  */
+console.log(duplicate1([1,2,4,2,5]))  
 
-/* function duplicate1(arr){
+ function duplicate1(arr){
  
     for(let i =0; i< arr.length;i++){
         for(let j =i+1; j< arr.length;j++){
@@ -28,8 +28,8 @@ console.log(duplicate1([1,2,4,2,5]))  */
     }
         return false
     }
-console.log(duplicate1([1,2,4,2,5]))  */
-/* function duplicate(arr){
+console.log(duplicate1([1,2,4,2,5]))  
+ function duplicate(arr){
     const obj = {};
     for(let i=0;i<arr.length;i++){
         if(obj[arr[i]]){
@@ -41,9 +41,9 @@ console.log(duplicate1([1,2,4,2,5]))  */
     }
 }
 
-console.log(duplicate([1,2,4,2,5])) */
+console.log(duplicate([1,2,4,2,5])) 
 
-/* function duplicate(arr){
+function duplicate(arr){
     const set = new Set();
     for(let i=0;i<arr.length;i++){
         if(set.has(arr[i])){
@@ -55,9 +55,9 @@ console.log(duplicate([1,2,4,2,5])) */
     return false
 }
 
-console.log(duplicate([1,4,2,5])) */
+console.log(duplicate([1,4,2,5])) 
 
-/* function duplicate(arr){
+ function duplicate(arr){
     const map = new Map();
     for(let i=0;i<arr.length;i++){
         if(map.has(arr[i])){
@@ -69,4 +69,4 @@ console.log(duplicate([1,4,2,5])) */
     return false
 }
 
-console.log(duplicate([1,4,2,2,5])) */
+console.log(duplicate([1,4,2,2,5])) 

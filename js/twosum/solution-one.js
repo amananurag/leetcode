@@ -1,17 +1,20 @@
 // finding the indices of two numbers in an array that add up to a specific target
 function twosum(arr, target) {
     
-    const map = new Map(); // Create a Map to store numbers and their indices
-    
+    const obj = {}; // Create a Map to store numbers and their indices
+    // const map = new Map()
     for (let i = 0; i < arr.length; i++) {
         // Store the current number and its index in the Map
-        map.set(arr[i], i);
+        //map.set(arr[i],i)
+        obj[arr[i]]=i;
         const complement = target - arr[i];
-
+       /*  if(map.has(complement)){
+            return [map.get(complement),i]
+        } */
         // Check if the complement exists in the Map
-        if (map.has(complement)) {
+        if (obj[complement]) {
            
-            return [map.get(complement), i];
+            return [obj[complement], i];
         }
 
       
@@ -20,5 +23,5 @@ function twosum(arr, target) {
     throw new Error("No solution found");
 };
 
-twosum([1,2,3,4,5],9)
+console.log(twosum([1,2,3,4,5],9))
 

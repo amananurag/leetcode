@@ -84,7 +84,7 @@ Result:
 
 function pattern4(n){
     for(let i=0;i<n;i++){
-        for(let j=1;j<n-i+1;j++){
+        for(let j=1;j<=n-i+1;j++){
             process.stdout.write('* ');
           
         }
@@ -112,7 +112,7 @@ Result:
 function pattern5(n){
     for(let i=0;i<n;i++){
         for(let j=1;j<n-i+1;j++){
-            process.stdout.write(j.toString()+ ' ');
+            process.stdout.write(i.toString()+ ' ');
           
         }
         console.log('\n');
@@ -229,3 +229,57 @@ Result:
  
 }
 console.log(pattern8(3))
+/* 
+
+Input Format: N = 3
+Result: 
+1    1
+12  21
+123321 */
+// numbers => 1 = 1 , 4, 1 ;2=> 2 ,2,2 ; 3= 3,0,3
+// space => 1 = 4
+// number => 1=1
+function pattern9(n){
+    let space = 2 * (n-1)
+    for(let i=1;i<=n;i++){
+
+        for(let j=1;j<=i;j++){
+            process.stdout.write(j.toString());
+          }
+          for(let j=1;j<=space;j++){
+            process.stdout.write(' ');
+          }
+          
+          for(let j=i;j>=1;j--){
+            process.stdout.write(j.toString());
+          }
+          
+        console.log('\n');
+        space = space-2;
+    }
+
+ 
+}
+console.log(pattern9(3))
+
+/* Input Format: N = 3
+Result: 
+1
+2 3
+4 5 6 */
+
+function pattern10(n){
+    let index = 0;
+    let jindex = 0;
+  for(let i=1;i<=n;i++){
+    for(let j=1;j<=i;j++){
+        jindex= j;
+        process.stdout.write((j+index).toString()+ ' ');
+    }
+    console.log('\n');
+    index +=jindex;
+  }
+
+}
+
+pattern10(5);

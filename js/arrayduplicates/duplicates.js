@@ -32,7 +32,7 @@ console.log(duplicate1([1,2,4,2,5]))
  function duplicate(arr){
     const obj = {};
     for(let i=0;i<arr.length;i++){
-        if(obj[arr[i]]){
+        if(obj[arr[i]]!= undefined){
             return true;
         }else{
             obj[arr[i]]=arr[i]

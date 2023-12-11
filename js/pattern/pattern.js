@@ -84,8 +84,8 @@ Result:
 */
 
 function pattern4(n){
-    for(let i=1;i<=n;i++){
-        for(let j=i;j<=n;j++){
+    for(let i=0;i<n;i++){
+        for(let j=1;j<n-i+1;j++){
             process.stdout.write('* ');
           
         }
@@ -103,10 +103,16 @@ Result:
 1
  */
 
+/* 1 = 3
+2 = 2
+3 = 1
+
+3-1+1
+ */
 
 function pattern5(n){
-    for(let i=n;i>0;i--){
-        for(let j=1;j<=i;j++){
+    for(let i=0;i<n;i++){
+        for(let j=1;j<n-i+1;j++){
             process.stdout.write(j.toString()+ ' ');
           
         }

@@ -283,3 +283,39 @@ function pattern10(n){
 }
 
 pattern10(5);
+
+/* Input Format: N = 3
+Result: 
+A
+A B
+A B C */
+
+function pattern11(n){
+  for(let i=1;i<=n;i++){
+    for(let j=1;j<=i;j++){
+       process.stdout.write(String.fromCharCode('A'.charCodeAt(0)+j-1+ ' '))
+    }
+    console.log('\n');
+  }
+
+}
+pattern11(5);
+
+/* Input Format: N = 3
+Result: 
+A B C
+A B
+A */
+
+
+function pattern12(n){
+  for(let i=0;i<n;i++){
+    for(let j=1;j<=n-i;j++){
+       process.stdout.write(String.fromCharCode('A'.charCodeAt(0)+j-1+ ' '))
+    }
+    console.log('\n');
+  }
+
+}
+pattern12(3);
+

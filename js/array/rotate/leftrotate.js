@@ -2,15 +2,15 @@ function leftrotate(arr,k){
     let rotatetimes = k%arr.length;
     
     let temp = [];
-  if(arr.length ==0 || arr.length == 1) return arr;
+   // to be rotated element stored in temp
    for(let i=0;i<rotatetimes;i++){
         temp.push(arr[i])
    }
-  
+  // rotate exiting elements to left 
   for(let i=0;i<arr.length-rotatetimes;i++){
     arr[i] = arr[i+rotatetimes];
   }
-  
+  // fill temp at last from arr.length-rotatetime
   let x =0;
    for(let j=arr.length-rotatetimes;j<arr.length;j++){
     arr[j] = temp[x];

@@ -11,3 +11,5 @@ function binary(arr,target){
 }
 
 console.log(binary([1,3,5,6,7,8],6));
+
+

@@ -2,13 +2,11 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
-    if (nums.length === 0) {
-        return 0;
-    }
+var finduniqueelementinsortedarray = function(nums) {
+   
 
     let initialIndex = 0;
-    let res = [nums[0]];
+
 
     for (let startIndex = 1; startIndex < nums.length; startIndex++) {
         if (nums[startIndex] !== nums[initialIndex]) {
@@ -18,7 +16,7 @@ var removeDuplicates = function(nums) {
         }
     }
 
-    return res;
+    return initialIndex+1;
 };
 
-console.log(removeDuplicates([0,1,1,1,2,2,3,3,4]))
+console.log(finduniqueelementinsortedarray([0,1,1,1,2,2,3,3,4]))

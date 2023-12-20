@@ -70,3 +70,20 @@ function smalllargest2(arr){
   }
 console.log(smalllargest2([2,1,4,77,55,88,24]))
 
+
+function oneanswer(arr){
+  let largest = arr[0];
+  let secondlargest = -1;
+  for(let i=1;i<arr.length;i++){
+    if(arr[i] > largest){
+      secondlargest = largest;
+      largest = arr[i]
+    }
+  }
+  return [largest,secondlargest];
+
+}
+
+
+
+console.log(oneanswer([2,1,4,77,55,88,24]))

@@ -71,13 +71,15 @@ function smalllargest2(arr){
 console.log(smalllargest2([2,1,4,77,55,88,24]))
 
 
-function oneanswer(arr){
+function oneanswerlargest(arr){
   let largest = arr[0];
   let secondlargest = -1;
   for(let i=1;i<arr.length;i++){
-    if(arr[i] > largest){
+    if(arr[i] >= largest){
       secondlargest = largest;
       largest = arr[i]
+    } else if(arr[i] >= secondlargest){
+      secondlargest = arr[i];
     }
   }
   return [largest,secondlargest];
@@ -86,4 +88,21 @@ function oneanswer(arr){
 
 
 
-console.log(oneanswer([2,1,4,77,55,88,24]))
+console.log(oneanswerlargest([2,1,4,77,55,88,24]))
+
+function oneanswersmallest(arr){
+  let smallest = arr[0];
+  let secondsmallest = -1;
+  for(let i=1;i<arr.length;i++){
+    if(arr[i] <= smallest){
+      secondsmallest = smallest;
+      smallest = arr[i]
+    } else if(arr[i] <= secondsmallest){
+      secondsmallest = arr[i];
+    }
+  }
+  return [smallest,secondsmallest];
+
+}
+
+console.log(oneanswersmallest([98,54,6,34,66,63,52,39]))

@@ -19,15 +19,18 @@ Explanation: You cannot buy 2 chocolates without going in debt, so we return 3.
  */
 
 var buyChoco = function(prices, money) {
-    let small = Math.min(prices[0], prices[1])
-    let secSmall = Math.max(prices[0], prices[1])
-    for(let i = 2; i< prices.length; i++){
-        if(prices[i] < small){
-            secSmall = small
-            small = prices[i]
-        }else if (prices[i]< secSmall) secSmall = prices[i]
+    let smallest = prices[0];
+    let secondsmallest = -1;
+    for(let i=1;i<prices.length;i++){
+      if(prices[i] <= smallest){
+        secondsmallest = smallest;
+        smallest = prices[i]
+      } else if(prices[i] <=secondsmallest){
+        secondsmallest = prices[i]
+      }
     }
-    return (money - (small+secSmall)) >= 0 ? money - (small+secSmall) : money
+    
+    return (money - (smallest+secondsmallest)) >= 0 ? money - (smallest+secondsmallest) : money
 };
 
 console.log(buyChoco([98,54,6,34,66,63,52,39],62));

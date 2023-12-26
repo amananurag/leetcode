@@ -6,7 +6,7 @@ function longestsubarraywithsumk(arr,k){
         for(let j=i;j<arr.length;j++){
            sum = sum+arr[j];
            if(sum===k){
-                maxlen = Math.max(maxlen,j-i+1)
+                maxlen = Math.max(maxlen,j-i+1);
            }
         }
     }

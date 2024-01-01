@@ -1,27 +1,25 @@
-function rightrotate(arr,k){
-    let rotatetime = k%arr.length;
-    let temp =[];
-    for(let i=arr.length-rotatetime;i<arr.length;i++){
-        temp.push(arr[i]);
-    }
-  // temp = [3]
-   // i = 1 1<3
-   // arr[1] = arr[1-1]
-   //arr[1] = 1
-   //[1,1,3]
-     for(let j=rotatetime;j<arr.length;j++){
-        arr[j] = arr[rotatetime-j];
-        console.log(arr)
-    }
-  
-    let x = 0;
-    for(let i=0;i<arr.length-rotatetime;i++){
-        arr[i] = temp[x]
-        x++
-    }
-    return arr;
-}
+/* Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
-console.log(rightrotate([1,2,3],1))
+ 
 
+Example 1:
 
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4] */
+
+var rotate = function(nums, k) {
+    let temp = [];
+    for(let i=0;i<nums.length;i++){
+        temp[(i+k)% nums.length] = nums[i];
+    }
+    for(let i=0;i<temp.length;i++){
+        nums[i] = temp[i];
+    }
+    return nums;
+};
+
+console.log(rotate([1,2,3,4,5,6,7],3));

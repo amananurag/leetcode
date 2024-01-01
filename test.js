@@ -1,17 +1,28 @@
-function rotateInt(testData){
-    let testDataString = testData.toString();
-    let reverseTestDataString = testDataString.split('').reverse().join('') ;
-    let parsedRotatedInt = parseInt(reverseTestDataString);
-    let range = Math.pow(2,31) - 1;
-    if(parsedRotatedInt > range || parsedRotatedInt < - (range)){
-        return 0
-    }
-    if(parsedRotatedInt > 0){
-        return parsedRotatedInt;
-    }else{
-        return -parsedRotatedInt;
-    }
-}
+function isSorted(arr){
+     let isSorted = true;
+     let order = arr[0]< arr[length-1]? 1:0;
+     let initialPointer = arr[0];
+     if(order){
 
-const result = rotateInt(-123);
-console.log(result);
+          for(let i=1;i<arr.length;i++){
+               if(initialPointer <=arr[i]){
+                    initialPointer = arr[i];
+                    continue;
+          }else{
+               isSorted = false;
+               break;
+          }
+     }
+}else{
+     for(let i=1;i<arr.length;i++){
+          if(initialPointer >=arr[i]){
+               initialPointer = arr[i];
+               continue;
+     }else{
+          isSorted = false;
+          break;
+     }
+}
+}
+return isSorted;
+}

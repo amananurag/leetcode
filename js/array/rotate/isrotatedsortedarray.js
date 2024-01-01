@@ -1,31 +1,20 @@
 function isRotatedSortedArray(nums) {
-    let min = minindex2(nums)
-   return  min > 0 && min < nums.length - 1 && nums[min - 1] > nums[min]
-}
-function minIndex(nums) {
-    let left = 0, right = nums.length - 1
-    while (left < right) {
-        let mid = Math.floor((left + right) / 2)
-        if (nums[mid] > nums[right]) {
-            left = mid + 1
-        } else if (nums[mid] < nums[right]) {
-            right = mid
-        } else {
-            right--
+    let count = 0;
+    for(let i=1;i<nums.length;i++){
+        if(nums[i-1] > nums[i]){
+            count++;
         }
     }
-    return left
-}
-function minindex2(nums){
-  let min = nums[0];
-  for(let i=0;i<nums.length;i++){
-    if(nums[i] < min){
-      min = nums[i];
+    if(nums[nums.length-1] > nums[0]){
+        count++;
     }
-  }
-  return nums.indexOf(min);
+    return count <=1;
+         
 }
 const rotatedSortedArray1 = [4, 5, 6, 7, 1, 2, 3];
 const rotatedSortedArray2 = [1, 2, 3, 4, 5, 6, 7];
 console.log(isRotatedSortedArray(rotatedSortedArray1))
 console.log(isRotatedSortedArray(rotatedSortedArray2))
+console.log(isRotatedSortedArray([2,1,3,4]))
+console.log(isRotatedSortedArray([2,1]))
+console.log(isRotatedSortedArray([1,1.1]))

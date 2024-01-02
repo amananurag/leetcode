@@ -1,28 +1,13 @@
-function isSorted(arr){
-     let isSorted = true;
-     let order = arr[0]< arr[length-1]? 1:0;
-     let initialPointer = arr[0];
-     if(order){
-
-          for(let i=1;i<arr.length;i++){
-               if(initialPointer <=arr[i]){
-                    initialPointer = arr[i];
-                    continue;
-          }else{
-               isSorted = false;
-               break;
-          }
+function plusone(arr){
+  for(let i=arr.length-1;i>=0;i--){
+     if(arr[i]!==9){
+         arr[i]++;
+         return arr;
      }
-}else{
-     for(let i=1;i<arr.length;i++){
-          if(initialPointer >=arr[i]){
-               initialPointer = arr[i];
-               continue;
-     }else{
-          isSorted = false;
-          break;
+     arr[i]=0;
+     if(i===0){
+         arr.unshift(1);
+         return arr;
      }
-}
-}
-return isSorted;
+  }
 }

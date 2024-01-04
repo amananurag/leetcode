@@ -1,11 +1,14 @@
 function mergesort(nums, low, high){
+   
     if(low >= high){
         return;
       }
   let mid = Math.floor((low + high) / 2);
   
   mergesort(nums, low, mid);
+
   mergesort(nums, mid + 1, high);
+  
   return  merge(nums, low, mid, high);
 
 }

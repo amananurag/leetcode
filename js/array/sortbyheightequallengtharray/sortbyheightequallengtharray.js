@@ -24,7 +24,7 @@ Explanation: The first Bob is the tallest, followed by Alice and the second Bob.
  * @return {string[]}
  */
 var sortPeople = function(names, heights) {
-    return  names.map((name,index) => ({'name': names[index], 'age': heights[index]})).sort((a,b)=> b.age-a.age).map((person)=> person.name)
+    return  names.map((name,index) => ({'name': names[index], 'height': heights[index]})).sort((a,b)=> b.height-a.height).map((person)=> person.name)
 };
 
 console.log(sortPeople(["Mary","John","Emma"],[180,165,170]))

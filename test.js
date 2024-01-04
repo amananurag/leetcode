@@ -1,13 +1,16 @@
-function plusone(arr){
-  for(let i=arr.length-1;i>=0;i--){
-     if(arr[i]!==9){
-         arr[i]++;
-         return arr;
+function containsNearbyDuplicate(nums,k){
+  let map = new Map();
+  for(let i=0;i<nums.length;i++){
+     if(i-map.get(nums[i]) <=k){
+        return true
      }
-     arr[i]=0;
-     if(i===0){
-         arr.unshift(1);
-         return arr;
-     }
+
+
+    map.set(nums[i],i)
   }
+   return false;
+  
 }
+
+
+console.log(containsNearbyDuplicate([1,2,3,1],3))

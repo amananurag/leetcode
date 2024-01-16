@@ -16,7 +16,7 @@ function isValidParenthesis(str){
             }
         }
     }
-    console.log(stack.length)
+    
     return   stack.length === 0;
 }
 

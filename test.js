@@ -1,22 +1,14 @@
-function relativeSort(arr1,arr2){
-
-    let res = [];
-    for(let i=0;i<arr2.length;i++){
-       res = res.concat(arr1.filter((item) => item === arr2[i]))
-    }
-   let y = [];
-    for(let i=0;i<arr1.length;i++){
-        if(!arr2.includes(arr1[i])){
-            y.push(arr1[i]);
-            y.sort((a,b) => a-b);
+function selectionsort(nums){
+    for(let i=0;i<nums.length;i++){
+        let min = i;
+        for(let j=0;j<nums.length;j++){
+            if(nums[j] < nums[min]){
+                min = j;
+            }
         }
+        let temp = nums[min];
+        nums[min] = nums[i];
+        nums[i] = temp;
     }
-    res = res.concat(y);
-    return res;
- 
+    return nums;
 }
-
-
-console.log(relativeSort([2,3,1,3,2,4,6,7,9,2,19],[2,1,4,3,9,6]))
-
-

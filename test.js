@@ -1,27 +1,21 @@
-function findDuplicate(nums) {
-    // Get the length of the array and subtract 1 to get the value of 'n'
-    const n = nums.length - 1;
-    
-    // Initialize a variable to store the XOR result
-    let result = 0;
+var findMedianSortedArrays = function(nums1, nums2) {
+    let res = [...nums1,...nums2].sort((a,b) => {
+        return a-b});
+        console.log(res)
+        let n = res.length;
+        if (n%2 !=0) {
+            let middle = Math.floor(res.length/2);
+            let median = res[middle];
+            return median;
+        }
+        if(n%2==0){
+let middle = res.length/2;
+let next = middle;
+let median =  (res[middle-1]+res[next])/2;
+return median;
+};
 
-    // XOR all the elements in the array 'nums'
-    for (const num of nums) {
-        result ^= num;
-        console.log(result)
-    }
-  
-    // XOR all the numbers from 1 to 'n'
-    for (let i = 1; i <= n; i++) {
-        result ^= i;
-    }
+        } 
 
-    // The final value of 'result' will be the duplicate number
-    return result;
-}
-
-// Example usage:
-const nums1 = [1, 3, 4, 2, 2];
-console.log(findDuplicate(nums1)); // Output: 2
-
-
+        console.log(findMedianSortedArrays([1,3],[2])) //2
+        console.log(findMedianSortedArrays([1,2],[3,4])) //2.5

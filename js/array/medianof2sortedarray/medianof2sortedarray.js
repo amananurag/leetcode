@@ -1,19 +1,13 @@
 function calculate_median(nums1,nums2){
-    let res = [...nums1,...nums2].sort((a,b) => {
-        return a-b});
-       
+    let res = [...nums1,...nums2].sort((a,b) => a-b);
+    let middle = Math.floor(res.length/2)
         let n = res.length;
         if (n%2 !=0) {
-            let middle = Math.floor(res.length/2);
-         
-            return res[middle];
-          
+          return res[middle];
         }
-        if(n%2==0){
-let middle = res.length/2;
-
-return  (res[middle-1]+res[middle])/2;
-}
+         if(n%2==0){
+            return  (res[middle-1]+res[middle])/2;
+        }
 }
 
 

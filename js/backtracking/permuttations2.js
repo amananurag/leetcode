@@ -3,6 +3,7 @@ function permute(nums){
     function backtrack(combination,unique){
         if(combination.length===nums.length){
             result.push([...combination]);
+            return 
         }
         const uniqueSet = new Set();
         for(let i=0;i<nums.length;i++){

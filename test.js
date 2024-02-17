@@ -1,21 +1,46 @@
-var findMedianSortedArrays = function(nums1, nums2) {
-    let res = [...nums1,...nums2].sort((a,b) => {
-        return a-b});
-        console.log(res)
-        let n = res.length;
-        if (n%2 !=0) {
-            let middle = Math.floor(res.length/2);
-            let median = res[middle];
-            return median;
-        }
-        if(n%2==0){
-let middle = res.length/2;
-let next = middle;
-let median =  (res[middle-1]+res[next])/2;
-return median;
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function(digits) {
+  if(!digits.length) return [];
+  let result = [];
+const map = {
+ 2: 'abc',
+ 3: 'def',
+ 4: 'ghi',
+ 5: 'jkl',
+ 6: 'mno',
+ 7: 'pqrs',
+ 8: 'tuv',
+ 9: 'wxyz',
 };
 
-        } 
+function backtrack(start, currentCombination) {
 
-        console.log(findMedianSortedArrays([1,3],[2])) //2
-        console.log(findMedianSortedArrays([1,2],[3,4])) //2.5
+ if (start === digits.length) {
+   result.push(currentCombination.join(''));
+
+   return;
+ }
+
+ const letters = map[digits[start]];
+
+ for (let i = 0; i < letters.length; i++) {
+   currentCombination.push(letters[i]);
+
+   backtrack(start + 1, currentCombination);
+   currentCombination.pop(); // backtrack
+ }
+}
+
+
+
+ backtrack(0, []);
+
+
+return result;
+
+};
+
+console.log(letterCombinations('23'))

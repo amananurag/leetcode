@@ -3,6 +3,7 @@ function permute(nums){
     function backtrack(combination){
         if(combination.length===nums.length){
             result.push([...combination]);
+            return 
         }
         for(let i=0;i<nums.length;i++){
             if(!combination.includes(nums[i])){

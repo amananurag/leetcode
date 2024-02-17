@@ -1,13 +1,25 @@
-
-
-function max(arr){
-    let count = 0;
-    let maxlength = 0;
-    for(let i=0;i<arr.length;i++){
-        if(arr[i]===1){
-            count++;
-            maxlength = Math.max(maxlength,count);
+function permutate(nums){
+    let result = [];
+    function backtrack(combinations,used){
+        if(combinations.length === nums.length){
+            result.push([...combinations]);
+            return ;
+        }
+        const uniqueSet = new Set();
+        for(let i=0;i<nums.length;i++){
+            if(used[i] || uniqueSet.has(nums[i])){
+                continue;
+            }
+            used[i] = true;
+            uniqueSet.add(nums[i])
+            combinations.push(nums[i])
+            backtrack(combinations,used);
+            combinations.pop()
+            used[i]=false;
         }
     }
-    return maxlength;
+
+    backtrack([],[])
+    return result;
 }
+console.log(permutate([1,2,3]))

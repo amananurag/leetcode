@@ -13,3 +13,5 @@ function reverseArray(arr){
   }
   
   console.log(reverseArray([1,4,2,7,5,2]))
+
+  

@@ -1,46 +1,22 @@
-/**
- * @param {string} digits
- * @return {string[]}
- */
-var letterCombinations = function(digits) {
-  if(!digits.length) return [];
-  let result = [];
-const map = {
- 2: 'abc',
- 3: 'def',
- 4: 'ghi',
- 5: 'jkl',
- 6: 'mno',
- 7: 'pqrs',
- 8: 'tuv',
- 9: 'wxyz',
-};
+function findIndexWithEqualSums(arr) {
+    const n = arr.length;
 
-function backtrack(start, currentCombination) {
+    // Calculate the total sum of the array
+    const totalSum = arr.reduce((acc, num) => acc + num, 0);
 
- if (start === digits.length) {
-   result.push(currentCombination.join(''));
+    let prefixSum = 0;
+    let suffixSum = totalSum;
 
-   return;
- }
+    for (let i = 0; i < n; i++) {
+        suffixSum -= arr[i];  // Update the suffix sum as we move to the next element
 
- const letters = map[digits[start]];
+        if (prefixSum === suffixSum) {
+            return i;  // Return the index if prefix sum equals suffix sum
+        }
 
- for (let i = 0; i < letters.length; i++) {
-   currentCombination.push(letters[i]);
+        prefixSum += arr[i];  // Update the prefix sum for the next iteration
+    }
 
-   backtrack(start + 1, currentCombination);
-   currentCombination.pop(); // backtrack
- }
+    return -1;  // If no such index is found
 }
-
-
-
- backtrack(0, []);
-
-
-return result;
-
-};
-
-console.log(letterCombinations('23'))
+console.log(findIndexWithEqualSums([1, 7, 3, 6, 5, 6]))//3

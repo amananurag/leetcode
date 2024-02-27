@@ -25,10 +25,8 @@ var topKFrequent = function(nums, k) {
       
         
     }
-    for(let i=0;i<temp.length;i++){
-        temp[i] = parseInt(temp[i][0]);
-    }
-     return temp;
+   return temp.map((item)=> parseInt(item[0]));
+     
 };
 
 console.log(topKFrequent([1,1,1,2,2,3],2))//[1,2]

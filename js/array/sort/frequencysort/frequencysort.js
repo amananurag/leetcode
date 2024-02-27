@@ -26,10 +26,7 @@ var frequencySort = function(nums) {
             obj[nums[i]] = 1;
         }
     }
-    let arr = [];
-    for(let key in obj){
-        arr.push([key,obj[key]]);
-    }
+    let arr = Object.entries(obj);
 
     arr.sort((a,b)=>{
         if(a[1] === b[1]){
@@ -37,15 +34,15 @@ var frequencySort = function(nums) {
         }
         return a[1] - b[1];
     });
-    
-    let res = [];
-    for(let i=0;i<arr.length;i++){
-        for(let j=0;j<arr[i][1];j++){
-            res.push(arr[i][0]);
-        }
-    }
-    return res;
+    repeatedKeysArray =[];
+    arr.forEach(([key, value]) => {
+        const frequency = value; // Use value as the frequency
+        repeatedKeysArray.push(...Array(frequency).fill(key));
+      });
+    return repeatedKeysArray.map((item)=> parseInt(item)) ;
+ 
 };
 
 
-console.log(frequencySort([2,3,1,3,2]))
+console.log(frequencySort([2,3,1,3,2])) // [1,3,3,2,2]
+console.log(frequencySort([1,1,2,2,2,3])) //[3,1,1,2,2,2]

@@ -1,33 +1,37 @@
 /**
- * @param {number[]} nums
- * @param {number} k
- * @return {number[]}
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
  */
-var topKFrequent = function(nums, k) {
-    
-    let obj ={};
-    for(let i=0;i<nums.length;i++){
-        if(obj[nums[i]]){
-            obj[nums[i]]++;
+var isAnagram = function(s, t) {
+    if(s.length != t.length) return false
+    let obj1 = {};
+    let obj2 ={};
+    for(let char of s){
+        if(obj1[char]){
+            obj1[char]++;
         }else{
-            obj[nums[i]] =1;
+            obj1[char]=1;
+
         }
     }
-
-    let res = Object.entries(obj);
-    res.sort((a,b)=> b[1]-a[1]);
-    let temp =[];
-    for(let i=0;i<k;i++){
-        
-            temp.push(res[i])
-      
-        
+     for(let char of t){
+        if(obj2[char]){
+            obj2[char]++;
+        }else{
+            obj2[char]=1;
+            
+        }
     }
-    for(let i=0;i<temp.length;i++){
-        temp[i] = parseInt(temp[i][0]);
+    for(let key in obj1){
+        if(!obj2[key] || obj1[key] !== obj2[key]){
+            return false;
+        }
+       
     }
-     return temp;
+    return true;
+   
 };
 
-console.log(topKFrequent([1,1,1,2,2,3],2))//[1,2]
-console.log(topKFrequent([1],1))//[1]
+console.log(isAnagram("anagram", "nagaram")); // true
+console.log(isAnagram("rat", "car")); // false

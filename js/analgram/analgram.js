@@ -22,16 +22,13 @@ function analgram(word1, word2){
         }
     }
     for(let key in obj1){
-
-        if(!obj2[key]){
-            return false
-        } else if (obj1[key] != obj2[key]){
-            return false
-        } else{
-           
-            return true
+        if(!obj2[key] || obj1[key] !== obj2[key]){
+            return false;
         }
+       
     }
+    return true;
 }
 
 console.log(analgram('The Morse Code','Here Come Dots'))
+

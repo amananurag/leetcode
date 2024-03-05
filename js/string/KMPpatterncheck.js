@@ -11,11 +11,11 @@ function Pattern(s, t){
                     return found;
                 }
                 i++;
-                continue;
+               
            
             } else {
                 found = false;
-                break;
+              
             }
         }
         

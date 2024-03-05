@@ -23,15 +23,15 @@ Output: false */
  */
 var wordPattern = function(pattern, s) {
     let patternArray = pattern.split('');
-   let sArray = s.split(' ');
-   if (patternArray.length !== sArray.length) return false;
+   let wordArray = s.split(' ');
+   if (patternArray.length !== wordArray.length) return false;
 
    let mapPattern = new Map();
    let mapWord = new Map();
 
    for (let i = 0; i < patternArray.length; i++) {
        const currentPattern = patternArray[i];
-       const currentWord = sArray[i];
+       const currentWord = wordArray[i];
 
        if (!mapPattern.has(currentPattern)) {
            mapPattern.set(currentPattern, currentWord);

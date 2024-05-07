@@ -46,3 +46,27 @@ function add(...args){
         }
     }
 }
+
+function debounce(fn, delay) {
+    let timer;
+    return function(...args) {
+       clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn.apply(this, ...args);
+        }, delay);
+    };
+}
+
+function throttle(fn, delay) {
+    let flag = false;
+    return function(...args) {
+      
+        if (!flag) {
+            fn.apply(this, ...args);
+            flag = true;
+            setTimeout(() => {
+                flag = false;
+            }, delay);
+        }
+    };
+}

@@ -30,6 +30,19 @@ var countingBits = function(n) {
     return result;
 }
 
+var countingBits2 = function(n) {
+   let count = 0;
+   while(n > 0){
+    if((n & 1) === 1){
+        count++;
+
+    }
+    n >>=1;
+   }
+   return count;
+}
+
+
 console.log(countingBits(2)); // [0,1,1]
 console.log(countingBits(5)); // [0,1,1,2,1,2]
 console.log(countingBits(10)); // [0,1,1,2,1,2,2,3,1,2,2]

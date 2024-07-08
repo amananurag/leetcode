@@ -38,7 +38,7 @@ function antonboundary(nums){
         }else{
             position +=nums[i]
         }
-    }
+    
     if(position === 0){
         boundarycount++;
     }

@@ -19,7 +19,7 @@ var averageWaitingTime = function(customers) {
         // Calculate the waiting time for this customer
         let waitingTime = finishTime - arrivalTime;
         
-        // Add the waiting time to the total waiting time
+        // Add the waiting time to the total waiting timeP
         totalWaitingTime += waitingTime;
         
         // Update the current time to the finish time

@@ -11,4 +11,4 @@ function deepcopy(originalobj){
 }
 }
 
-console.log(deepcopy({a:1, b:2, c:{d:3, e:4}})); // {a:1, b:2, c:{d:3, e:4}}
+console.log(deepcopy({a:1, b:2, c:{d:3, e:4}})); // {a:1, b:2, c:{d:3, e:4}} 

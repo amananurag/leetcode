@@ -20,7 +20,7 @@ Explanation: You cannot buy 2 chocolates without going in debt, so we return 3.
 
 var buyChoco = function(prices, money) {
     let smallest = prices[0];
-    let secondsmallest = -1;
+    let secondsmallest = Infinity;
     for(let i=1;i<prices.length;i++){
       if(prices[i] <= smallest){
         secondsmallest = smallest;

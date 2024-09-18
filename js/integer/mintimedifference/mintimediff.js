@@ -1,28 +1,26 @@
 
 
+
 var findMinDifference = function(timePoints) {
-    if ([new Set(timePoints).size] != timePoints.length) {
-        return 0
-    }
+    // Convert times to minutes
+  let minutes = timePoints.map(time => {
+      let [h, m] = time.split(':').map(Number);
+      return h * 60 + m;
+  });
 
-    // if (timePoints.indexOf(timePoints[0]) != timePoints.lastIndexOf(timePoints[0])) {
-    //     return 0
-    // }
+  // Sort times in ascending order
+  minutes.sort((a, b) => a - b);
 
-  timePoints.sort();
-  timePoints = timePoints.map(el => {
-    let [hours, minutes] = el.split(':');
-    return Number(hours) * 60 + Number(minutes);
-  })
-  
-  timePoints.push(timePoints[0] + 1440);
+  // Find minimum difference across adjacent elements
   let minDiff = Infinity;
-  for (let i = 1; i < timePoints.length; i ++) {
-    minDiff = Math.min(minDiff, timePoints[i] - timePoints[i - 1]);
+  for (let i = 0; i < minutes.length - 1; i++) {
+      minDiff = Math.min(minDiff, minutes[i + 1] - minutes[i]);
   }
-  
+
+  // Consider the circular difference between last and first element
+  minDiff = Math.min(minDiff, 24 * 60 - minutes[minutes.length - 1] + minutes[0]);
+
   return minDiff;
 };
-
 console.log(findMinDifference(["23:59","00:00"]))
 console.log(findMinDifference(["00:00","23:59","00:00"]))

@@ -37,7 +37,7 @@ var findContentChildren = function(g, s) {
       // Loop until we've processed all children or all cookies
       while (i < g.length && j < s.length) {
           // If the cookie size can satisfy the child's greed factor
-          if (s[j] >= g[i]) {
+          if (g[i] <= s[j] ) {
               contentChildren++;
               i++; // Move to the next child
           }

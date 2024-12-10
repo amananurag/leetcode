@@ -30,6 +30,7 @@ var maxSubArray = function(nums) {
         return nums[0];
     }
 
+    
     let currentSum = nums[0];
     let largestSum = nums[0];
 

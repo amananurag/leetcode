@@ -34,7 +34,6 @@ var climbStairs = function(n) {
       }
       return cur;
   }
-
   console.log(climbStairs(2))
 
   console.log(climbStairs(5))

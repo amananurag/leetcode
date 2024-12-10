@@ -23,7 +23,7 @@ var numSquares = function(n) {
     const dp = new Array(n + 1).fill(Infinity);
      
      // Base case: 0 can be formed with 0 perfect squares
-     dp[0] = 0;
+     dp[0] = 0; 
  
      // Iterate from 1 to n
      for (let i = 1; i <= n; i++) {

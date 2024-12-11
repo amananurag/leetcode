@@ -1,7 +1,7 @@
 function isRotatedSortedArray(nums) {
     let count = 0;
-    for(let i=0;i<nums.length;i++){
-        if(nums[i] > nums[i+1]){
+    for(let i=1;i<nums.length;i++){
+        if(nums[i-1] > nums[i]){
             count++;
         }
     }
@@ -17,4 +17,4 @@ console.log(isRotatedSortedArray(rotatedSortedArray1))
 console.log(isRotatedSortedArray(rotatedSortedArray2))
 console.log(isRotatedSortedArray([2,1,3,4]))
 console.log(isRotatedSortedArray([2,1]))
-console.log(isRotatedSortedArray([1,1.1]))
+console.log(isRotatedSortedArray([1,1,1]))

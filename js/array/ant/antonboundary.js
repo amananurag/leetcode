@@ -42,6 +42,7 @@ function antonboundary(nums){
     if(position === 0){
         boundarycount++;
     }
+}
     return boundarycount;
 }
 

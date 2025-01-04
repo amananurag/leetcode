@@ -16,7 +16,7 @@ var minSubArrayLen = function(target, nums) {
            minLength = Math.min(minLength, i - j + 1);
            sum -= nums[j];
            j++;
-       }7
+       }
    }
 
    return minLength === Infinity ? 0 : minLength;

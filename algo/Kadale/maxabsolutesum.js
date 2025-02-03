@@ -5,7 +5,7 @@
 var maxAbsoluteSum = function(nums) {
     let maxsum = nums[0];
     let curmax = nums[0];
-    let  minsum = nums[0];
+    let  minsum = nums[0]; 
     let  curmin = nums[0];
      
      for(let i = 1; i < nums.length; i++) {

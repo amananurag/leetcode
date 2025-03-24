@@ -25,7 +25,7 @@ var buyChoco = function(prices, money) {
       if(prices[i] <= smallest){
         secondsmallest = smallest;
         smallest = prices[i]
-      } else if(prices[i] <=secondsmallest){
+      } else if(prices[i] <secondsmallest){
         secondsmallest = prices[i]
       }
     }

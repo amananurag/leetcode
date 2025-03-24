@@ -42,19 +42,12 @@ Output: 2
 Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
  */
 var missingNumber = function(nums) {
-    let max = nums[0];
-    for(let i=1;i<nums.length;i++){
-        if(nums[i] > max){
-            max = nums[i];
-        }
-    }
-    for(let i=0;i<max;i++){
-       
+    let n = nums.length ;
+    for(let i=0;i<=n;i++){
         if(!nums.includes(i)){
             return i;
         }
     }
-    return -1
 };
 
 

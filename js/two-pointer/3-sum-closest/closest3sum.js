@@ -19,10 +19,7 @@ var threeSumClosest = function(nums, target) {
                 closestSum = sum;
             }
             if(sum === target){
-            while(nums[low]===nums[low+1]) low++;
-            while(nums[high]===nums[high-1]) high--;
-            low++;
-            high--;
+          
             return sum;
             }
            
@@ -34,7 +31,7 @@ var threeSumClosest = function(nums, target) {
             
            
         }
-        while(nums[i]===nums[i+1])i++;
+ 
     }
     return closestSum;
 };

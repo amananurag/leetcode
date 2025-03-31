@@ -6,22 +6,21 @@
  * @return {number[]}
  */
 var topKFrequent = function(nums, k) {
-  
     let obj ={};
     for(let i=0;i<nums.length;i++){
-      obj[nums[i]] = ( obj[nums[i]] || 0)   + 1;
+      obj[nums[i]] =  (obj[nums[i]] || 0) +1;
     }
-
     let res = Object.entries(obj);
     res.sort((a,b)=> b[1]-a[1]);
     let temp =[];
     for(let i=0;i<k;i++){
         
-            temp.push(res[i])
+            temp.push(parseInt(res[i]))
       
         
     }
-   return temp.map((item)=> parseInt(item[0]));
+   
+     return temp;
      
 };
 

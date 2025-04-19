@@ -7,4 +7,4 @@ var intersection = function(nums1, nums2) {
     return [...new Set(nums1.filter((num) => nums2.includes(num)))]
 };
 
-// https://leetcode.com/problems/intersection-of-two-arrays/
+// https://leetcode.com/problems/intersection-of-two-arrays

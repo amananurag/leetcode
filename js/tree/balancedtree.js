@@ -42,7 +42,7 @@ var isBalanced = function(root) {
     }
       return checkheight(root) !== -1;
 };
-
+ 
 
 // Create a balanced binary tree
 let root = createBalancedTree();

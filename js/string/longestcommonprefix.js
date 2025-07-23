@@ -10,4 +10,4 @@ var longestCommonPrefix = function(strs) {
 };
 
 console.log(longestCommonPrefix(["flower","flow","floght"]))//fl
-console.log(longestCommonPrefix(["dog","racecar","car"]))//''
+console.log(longestCommonPrefix(["dog","racecar","car"]))//

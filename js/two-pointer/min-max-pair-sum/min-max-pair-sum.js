@@ -11,7 +11,7 @@ var minPairSum = function(nums) {
         let pairSum = nums[i]+ nums[j];
         maxSum = Math.max(maxSum, pairSum);
         i++;
-        j--;
+        j--; 
     }
     return maxSum;
 

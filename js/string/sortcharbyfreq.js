@@ -7,11 +7,7 @@
 var frequencySort = function(s) {
     let obj ={};
     for(let i=0;i<s.length;i++){
-        if(obj[s[i]]){
-            obj[s[i]]++;
-        }else{
-            obj[s[i]] =1;
-        }
+        obj[s[i]] = (      obj[s[i]] || 0) + 1;
     }
 // Get an array of keys and values as [key, value] pairs
 const keyValueArray = Object.entries(obj);

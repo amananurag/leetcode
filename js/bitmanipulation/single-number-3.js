@@ -11,8 +11,7 @@ var singleNumber = function(nums) {
 
     // Step 2: Find a set bit (rightmost set bit)
     const diff = xorResult & (-xorResult);
-    console.log(xorResult)
-    console.log(diff)
+  
     // Step 3: Divide numbers into two groups and XOR each group
     let num1 = 0, num2 = 0;
     for (const num of nums) {

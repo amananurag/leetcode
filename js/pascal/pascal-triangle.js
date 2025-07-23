@@ -49,8 +49,24 @@ var returnRow = function(numRows) {
       triangle.push(newRow);
   }
 
-  return triangle[numRows];
+  return triangle[numRows-1];
 };
 
-console.log(returnRow(5)) // [1,4,6,4,1]
 console.log(returnRow(1)) // [1]
+console.log(returnRow(2)) // [1, 1]
+console.log(returnRow(3)) // [1, 2, 1]
+console.log(returnRow(5)) // [1, 4, 6, 4, 1]
+
+
+// If you only need the nth row, you don’t need to build the whole triangle. Use this O(n) space method:
+function getNthRow(n) {
+    const row = [1];
+
+    for (let k = 1; k <= n; k++) {
+        row[k] = row[k - 1] * (n - k + 1) / k;
+    }
+
+    return row;
+}
+
+console.log(getNthRow(4)); // [1, 4, 6, 4, 1]

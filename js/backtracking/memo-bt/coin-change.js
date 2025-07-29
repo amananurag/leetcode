@@ -4,29 +4,30 @@
  * @return {number}
  */
 var coinChange = function(coins, amount) {
-    const map = new Map();
- 
-     function bt(amount) {
-         if (map.has(amount)) return map.get(amount);
-         if (amount === 0) return 0;
-         if (amount < 0) return Infinity;
- 
-         let min = Infinity;
- 
-         for (let coin of coins) {
-             const res = bt(amount - coin);
-             if (res !== Infinity) {
-                 min = Math.min(min, res + 1);
-             }
-         }
- 
-         map.set(amount, min);
-         return min; 
-     }
- 
-     const result = bt(amount);
-     return result === Infinity ? -1 : result;
- };
+    const memo = new Array(amount + 1).fill(-1);
+  
+      function dp(rem) {
+          if (rem === 0) return 0;          // Base case: 0 coins needed
+          if (rem < 0) return Infinity;     // Impossible to make negative amount
+  
+          if (memo[rem] !== -1) return memo[rem];
+  
+          let minCoins = Infinity;
+  
+          for (let coin of coins) {
+              const res = dp(rem - coin);
+              if (res !== Infinity) {
+                  minCoins = Math.min(minCoins, 1 + res);
+              }
+          }
+  
+          memo[rem] = minCoins;
+          return memo[rem];
+      }
+  
+      const result = dp(amount);
+      return result === Infinity ? -1 : result;
+  };
 
 
  console.log(coinChange([1,3,5],12))
